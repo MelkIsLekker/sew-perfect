@@ -27,14 +27,14 @@ export const lookbookData: LookbookItem[] = [
     id: "evening-restyling",
     title: "Eveningwear Silhouette Restyling",
     category: "Eveningwear & Restyling",
-    src: "/images/lookbook/evening-restyling.jpg",
+    src: "/images/lookbook/evening-dress.jpg",
     alt: "Silk evening gown silhouette reshaping and alteration",
   },
   {
     id: "blind-hemming",
     title: "Invisible Trouser Blind Hemming",
     category: "Fine Alterations",
-    src: "/images/lookbook/hem-finish.jpg",
+    src: "/images/lookbook/hem-making.jpg",
     alt: "Precision garment repair and tailored blind hemming",
   },
 ];
