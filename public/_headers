@@ -1,0 +1,11 @@
+# Immutable caching for Next.js hashed scripts and stylesheets
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache portfolio images with stale-while-revalidate
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Always revalidate HTML so users immediately see new updates
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
