@@ -1,38 +1,40 @@
+// src/config/lookbook.ts
 export interface LookbookItem {
   id: string;
   title: string;
   category: string;
   src: string;
   alt: string;
+  description?: string;
 }
 
 export const lookbookData: LookbookItem[] = [
   {
-    id: "wedding-dress",
-    title: "Bespoke Bridal Gown",
-    category: "Bridal Couture",
+    id: "bridal-gown",
+    title: "Bespoke Bridal Gown Fitting",
+    category: "Bespoke Bridal",
     src: "/images/lookbook/wedding-dress.jpg",
-    alt: "Custom hand-crafted bridal wedding gown with intricate seam detail and train",
+    alt: "Bespoke wedding gown fitting and alteration in Midstream",
   },
   {
-    id: "matric-gown",
-    title: "Custom Matric Farewell Gown",
-    category: "Bespoke Dressmaking",
+    id: "matric-farewell",
+    title: "Matric Farewell Satin Bodice",
+    category: "Matric Farewell",
     src: "/images/lookbook/matric-gown.jpg",
-    alt: "Made-to-measure matric dance evening dress with tailored bodice",
+    alt: "Custom matric dance evening dress tailoring",
   },
   {
     id: "evening-restyling",
-    title: "Evening & Cocktail Wear",
-    category: "Custom Dressmaking",
-    src: "/images/lookbook/evening-dress.jpg",
-    alt: "Bespoke cocktail dress tailored to exact body measurements",
+    title: "Eveningwear Silhouette Restyling",
+    category: "Eveningwear & Restyling",
+    src: "/images/lookbook/evening-restyling.jpg",
+    alt: "Silk evening gown silhouette reshaping and alteration",
   },
   {
-    id: "hem-finish",
-    title: "Precision Alterations & Seamwork",
-    category: "Craftsmanship Detail",
-    src: "/images/lookbook/hem-making.jpg",
-    alt: "Macro shot of fine hem finishing, zip repairs, and delicate garment adjustments",
+    id: "blind-hemming",
+    title: "Invisible Trouser Blind Hemming",
+    category: "Fine Alterations",
+    src: "/images/lookbook/hem-finish.jpg",
+    alt: "Precision garment repair and tailored blind hemming",
   },
 ];

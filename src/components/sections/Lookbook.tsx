@@ -1,11 +1,13 @@
+// src/components/sections/Lookbook.tsx
 import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { lookbookData } from "@/config/lookbook";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { getLookbookEntries } from "@/lib/keystatic";
 
-export function Lookbook() {
+export async function Lookbook() {
+  const items = await getLookbookEntries();
+
   return (
     <section id="lookbook" className="py-24 border-b border-borderline">
       <Container>
@@ -16,13 +18,12 @@ export function Lookbook() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {lookbookData.map((item: { id: React.Key | null | undefined; src: string | StaticImport; alt: string; category: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; title: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; }, idx: any) => (
+          {items.map((item) => (
             <div
               key={item.id}
-              className="group border border-borderline bg-white p-4 transition-all duration-300 hover:border-primary"
+              className="group border border-borderline bg-surface p-4 transition-all duration-300 hover:border-primary shadow-xs"
             >
-              {/* Image Container with 4:5 Aspect Ratio */}
-              <div className="aspect-[4/5] bg-neutral-100 border border-neutral-200 mb-4 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-surface-alt border border-borderline mb-4 relative overflow-hidden">
                 <Image
                   src={item.src}
                   alt={item.alt}
@@ -32,8 +33,7 @@ export function Lookbook() {
                 />
               </div>
 
-              {/* Caption & Category */}
-              <span className="text-[10px] uppercase tracking-widest text-muted block mb-1">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-accent block mb-1">
                 {item.category}
               </span>
               <h4 className="font-serif text-base text-primary font-normal leading-snug">
